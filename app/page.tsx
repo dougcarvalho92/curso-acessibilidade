@@ -15,10 +15,10 @@ export default function Home() {
   return (
     <>
       <header className={styles.navbar}>
-        <Image src={Logo} width={50} />
+        <Image src={Logo} width={50} alt='Blog da Página' />
         <div className='nav'>
-          <Link href='github.com/dougcarvalho92/'>
-            <Github size={25} />
+          <Link href='github.com/dougcarvalho92/' aria-label='Github'>
+            <Github size={25} aria-hidden='true' />
           </Link>
         </div>
       </header>
@@ -29,7 +29,7 @@ export default function Home() {
             Get started by editing&nbsp;
             <code>app/page.tsx</code>
           </p>
-          <h4>TESTE</h4>
+          <h2>TESTE</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi
             temporibus tempora similique laboriosam eveniet, cum quae cumque.
@@ -46,10 +46,10 @@ export default function Home() {
         </article>
       </main>
       <footer className={styles.navbar} aria-label='Rodapé'>
-        <Image src={Logo} width={50} />
+        <Image src={Logo} width={50} alt='Blog da Página' />
         <div className='nav'>
-          <Link href='github.com/dougcarvalho92/'>
-            <Github size={25} />
+          <Link href='github.com/dougcarvalho92/' aria-label='Github'>
+            <Github size={25} aria-hidden='true' />
           </Link>
         </div>
       </footer>
