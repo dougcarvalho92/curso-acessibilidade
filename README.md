@@ -62,3 +62,11 @@ Links úteis:
 - Link: https://support.apple.com/guide/voiceover/welcome/mac
 
 ### Sobre modal
+- Usar o dialog do html
+- Caso exista um modal feito a mão, usar a 
+- role="dialog"
+- aria-labelledby
+- aria-describedby
+- tabindex = -1
+
+### RADIX UI É ACESSIVEL 
