@@ -2,12 +2,14 @@
 import Image from "next/image";
 
 import Axe from "@/components/axe";
-import { Modal } from "@/components/modal";
+
 import { Github } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import Logo from "../public/globe.svg";
 import styles from "./styles/home.module.css";
+
+import { Button, Dialog, Flex, Text, TextField } from "@radix-ui/themes";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -56,28 +58,51 @@ export default function Home() {
           {/* <Link href='github.com/dougcarvalho92/' aria-label='Github'>
             <Github size={25} aria-hidden='true' />
           </Link> */}
-          <button
-            onClick={() => setIsModalOpen(true)}
-            aria-controls='modal-terms'
-          >
-            Termos de uso
-          </button>
-          <Modal
-            isOpen={isModalOpen}
-            title='Termos de uso'
-            onClose={() => setIsModalOpen(false)}
-            id='modal-terms'
-          >
-            <h1>Termos de uso do modal</h1>
-            <p>
-              These are the terms of use for the modal; please read them
-              carefully before interacting with the application.
-            </p>
-            <p>
-              By using this site you agree to the terms described here and any
-              additional policies referenced within.
-            </p>
-          </Modal>
+
+          <Dialog.Root>
+            <Dialog.Trigger>
+              <Button> Termos de uso</Button>
+            </Dialog.Trigger>
+
+            <Dialog.Content maxWidth='450px'>
+              <Dialog.Title>Edit profile</Dialog.Title>
+              <Dialog.Description size='2' mb='4'>
+                Make changes to your profile.
+              </Dialog.Description>
+
+              <Flex direction='column' gap='3'>
+                <label>
+                  <Text as='div' size='2' mb='1' weight='bold'>
+                    Name
+                  </Text>
+                  <TextField.Root
+                    defaultValue='Freja Johnsen'
+                    placeholder='Enter your full name'
+                  />
+                </label>
+                <label>
+                  <Text as='div' size='2' mb='1' weight='bold'>
+                    Email
+                  </Text>
+                  <TextField.Root
+                    defaultValue='freja@example.com'
+                    placeholder='Enter your email'
+                  />
+                </label>
+              </Flex>
+
+              <Flex gap='3' mt='4' justify='end'>
+                <Dialog.Close>
+                  <Button variant='soft' color='gray'>
+                    Cancel
+                  </Button>
+                </Dialog.Close>
+                <Dialog.Close>
+                  <Button>Save</Button>
+                </Dialog.Close>
+              </Flex>
+            </Dialog.Content>
+          </Dialog.Root>
         </div>
       </footer>
     </Axe>
