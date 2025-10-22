@@ -61,3 +61,4 @@ Links úteis:
 - Gratuito e já instalado
 - Link: https://support.apple.com/guide/voiceover/welcome/mac
 
+### Sobre modal
